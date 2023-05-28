@@ -58,7 +58,8 @@ app.component('navbar', {
                     <form class="d-flex">
                     <input class="form-control" type="search" placeholder="Search Recipes" aria-label="Search">
                         <button class="btn btn-outline-success " type="submit">Search</button>
-                </form>
+                    </form>
+                    <a class="" href="register.html"><img src="">Perfil </a>
                 </div>
             </div>
         </nav>

@@ -36,6 +36,11 @@ app.component('recipecard', {
             type: Number
         }
     },
+    methods: {
+        onClickViewRecipe(){
+            this.$compEvent.emit('event', this);
+        }
+    },
     template:
         /*html*/
         `
@@ -44,7 +49,7 @@ app.component('recipecard', {
   <div class="card-body" >
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text text-truncate">{{description}}</p>
-    <a href="#" class="btn btn-primary">View Recipe</a>
+    <button class="btn btn-primary" v-on:click="onClickViewRecipe()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">View Recipe</button>
   </div>
 </div>
      `

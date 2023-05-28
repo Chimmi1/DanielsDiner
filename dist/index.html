@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
     <link rel="stylesheet" href="./css/main.css">
     <!-- Bootstrap CSS -->
 
@@ -15,6 +16,13 @@
 
 <body>
     <section id="app" class="container-fluid bg-dark">
+
+        <!-- Modal -->
+        <recipedetails ></recipedetails>
+        <!-- Modal -->
+
+
+
         <!-- Navbar -->
         <navbar></navbar>
         <!-- Navbar -->
@@ -44,7 +52,7 @@
                     <recipecard :image="item.image" :category="item.category" :name="item.name"
                         :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes"
                         :index="index" v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
-                        v-on:recipedetails="onClickRecipeDetails"></recipecard>
+                        v-on:recipedetails="onClickRecipeDetails" v-on:recipecard="onClickViewRecipe"></recipecard>
                 </div>
             </section>
             <!-- Recommended Recipes -->
@@ -100,6 +108,7 @@
     <script src="./js/components/RecipeCard.js"></script>
     <script src="./js/components/TopRecipeCard.js"></script>
     <script src="./js/components/Footer.js"></script>
+    <script src="./js/components/RecipeDetails.js"></script>
     <!-- Referencias JS-->
 
 

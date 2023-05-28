@@ -13,4 +13,14 @@ const app = Vue.createApp({
             ],
         }
     },
+    methods: {
+        onClickRecipeDetails(){
+            this.$compEvent.emit('event', "works!" );
+
+            
+        }
+    },
 })
+
+const emitter = mitt();
+app.config.globalProperties.$compEvent = emitter;
