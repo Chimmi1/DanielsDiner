@@ -18,30 +18,36 @@
     <section id="app" class="container-fluid bg-dark">
 
         <!-- Modal -->
-        <recipedetails ></recipedetails>
+        <recipedetails></recipedetails>
         <!-- Modal -->
 
 
 
         <!-- Navbar -->
-        <navbar></navbar>
+        <div >
+            <navbar></navbar>
+        </div>
         <!-- Navbar -->
         <section class="container">
 
             <!-- Carousel -->
             <carousel></carousel>
             <!-- Featured Recipe Title -->
-            <div >
-                <h1 class="text-light mt-5 mb-lg-5">Todays Featured Recipe</h1>
+            <div>
+                <h1 class="text-light mt-5 mb-lg-5 text-center">Todays Featured Recipe</h1>
             </div>
             <!-- Featured Recipe Title -->
 
             <!-- Featured Recipe -->
-            <featuredrecipecard></featuredrecipecard>
+            <div class="row">
+                <div class="d-flex align-items-center justify-content-center">
+                    <featuredrecipecard></featuredrecipecard>
+                </div>
+            </div>
             <!-- Featured Recipe -->
 
             <!-- Recommended Recipes Title -->
-            <div >
+            <div>
                 <h1 class="text-light mt-5 mb-lg-5">Recommended Recipes</h1>
             </div>
             <!-- Recommended Recipes Title -->
@@ -58,17 +64,17 @@
             <!-- Recommended Recipes -->
 
             <!-- Top 10 Recipes Title -->
-            <div >
+            <div>
                 <h1 class="text-light mt-5 mb-lg-5">Top 10 Recipes</h1>
             </div>
             <!-- Top 10 Recipes Title -->
 
             <!-- Top 10 Recipes -->
             <section class="row">
-                <div v-for="(item, index) in recipes"  class="col-lg-8 mb-5 ">
+                <div v-for="(item, index) in recipes" class="col-lg-8 mb-5 ">
                     <toprecipecard :image="item.image" :category="item.category" :name="item.name"
-                    :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes"
-                    :index="index"></toprecipecard>
+                        :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes"
+                        :index="index"></toprecipecard>
                 </div>
             </section>
             <!-- Top 10 Recipes -->

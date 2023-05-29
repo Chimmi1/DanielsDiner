@@ -22,12 +22,13 @@ app.component('navbar', {
         /*html*/
         `
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div class="container-fluid">
+            <div class="container">
                 <a class=" navbar-brand " href="#">Daniels Diner</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                
                     <ul class="navbar-nav   mb-2 mb-lg-4 mt-3">
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -55,12 +56,12 @@ app.component('navbar', {
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Contact Us</a>
                     </li>
                     </ul>
-                    <form class="d-flex">
-                    <input class="form-control" type="search" placeholder="Search Recipes" aria-label="Search">
-                        <button class="btn btn-outline-success " type="submit">Search</button>
-                    </form>
-                    <a class="" href="register.html"><img src="">Perfil </a>
                 </div>
+                <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search Recipes" aria-label="Search">
+                    <button class="btn btn-outline-success me-5" type="submit">Search</button>
+                </form>
+                <a class="" href="register.html"><img src="./images/perfil.png" style="width: 3rem;"></a>
             </div>
         </nav>
         `
