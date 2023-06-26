@@ -18,20 +18,27 @@
     <section id="app" class="container-fluid bg-dark">
 
         <!-- Modal -->
-        <recipedetails></recipedetails>
+        <recipedetails :image="recipe.image" :name="recipe.name" :ingredients="recipe.ingredients"
+            :instructions="recipe.instructions"></recipedetails>
         <!-- Modal -->
 
 
 
         <!-- Navbar -->
-        <div >
+        <div>
             <navbar></navbar>
         </div>
         <!-- Navbar -->
         <section class="container">
 
             <!-- Carousel -->
-            <carousel></carousel>
+
+            <!--
+            <div v-for="(item, index) in recipes">
+            </div>
+            -->
+            <carousel ></carousel>
+
             <!-- Featured Recipe Title -->
             <div>
                 <h1 class="text-light mt-5 mb-lg-5 text-center">Todays Featured Recipe</h1>
@@ -39,11 +46,9 @@
             <!-- Featured Recipe Title -->
 
             <!-- Featured Recipe -->
-            <div class="row">
                 <div class="d-flex align-items-center justify-content-center">
                     <featuredrecipecard></featuredrecipecard>
                 </div>
-            </div>
             <!-- Featured Recipe -->
 
             <!-- Recommended Recipes Title -->
@@ -53,14 +58,21 @@
             <!-- Recommended Recipes Title -->
 
             <!-- Recommended Recipes -->
+            <div v-for="(item, index) in recipes" class="col-md-3">
+
+            </div>
+            <recipecard :recipeCount="recipeCount" :name="recipes_slider1.name"></recipecard>
+
+            <!--
             <section class="row">
                 <div v-for="(item, index) in recipes" class="col-md-4 " style="max-width: 40 rem;">
                     <recipecard :image="item.image" :category="item.category" :name="item.name"
                         :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes"
-                        :index="index" v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
+                        :index="item.id" v-on:recipelike="onClickRecipeLike" v-on:recipeunlike="onClickRecipeUnlike"
                         v-on:recipedetails="onClickRecipeDetails" v-on:recipecard="onClickViewRecipe"></recipecard>
                 </div>
             </section>
+            -->
             <!-- Recommended Recipes -->
 
             <!-- Top 10 Recipes Title -->
@@ -74,7 +86,7 @@
                 <div v-for="(item, index) in recipes" class="col-lg-8 mb-5 ">
                     <toprecipecard :image="item.image" :category="item.category" :name="item.name"
                         :description="item.instructions" :time="item.time" :level="item.level" :likes="item.likes"
-                        :index="index"></toprecipecard>
+                        :index="item.id"></toprecipecard>
                 </div>
             </section>
             <!-- Top 10 Recipes -->
@@ -106,6 +118,10 @@
     <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
     <!-- VueJS eventos a traves de clases-->
 
+    <!-- Axios API JS -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Axios API JS -->
+
     <!-- Referencias JS-->
     <script src="./js/main.js"></script>
     <script src="./js/components/Navbar.js"></script>
@@ -116,8 +132,6 @@
     <script src="./js/components/Footer.js"></script>
     <script src="./js/components/RecipeDetails.js"></script>
     <!-- Referencias JS-->
-
-
 
     <!-- mounted app-->
     <script>

@@ -1,36 +1,53 @@
 app.component('recipedetails', {
-    data() {
-        return {
-          recipe: [{name: "name", image: "image", ingredients: "ingredients"}]
-        }
+  props: {
+    image: {
+      type: String
     },
-    props: {
-      name: {
-        type:String
-      },
-      image: {
-        type:String
-      },
-      ingredients: {
-        type:String
-      },
-      instructions: {
-        type:String
-      },
+    category: {
+      type: String,
+      default: "recipe category"
     },
-    mounted() {
-      this.$compEvent.on('event', function(data){
-        this.recipe = data;
-        this.recipe.name = data.name; 
-        console.log(recipe.name);
-      });
+    name: {
+      type: String,
+      default: "recipe name"
     },
-    methods: {
-      
+    description: {
+      type: String,
+      default: "recipe description"
     },
-    template:
-        /*html*/
-        `
+    time: {
+      type: String,
+      default: "recipe time"
+    },
+    level: {
+      type: String,
+      default: "recipe level"
+    },
+    likes: {
+      type: Number,
+      default: 10
+    },
+    index: {
+      type: Number
+    }
+  },
+  data() {
+    return {
+    }
+  },
+  mounted() {
+    this.$compEvent.on('event', function (data) {
+      // this.recipe = data;
+      this.name = data.name;
+      console.log(data);
+    });
+  },
+  methods: {
+
+  },
+  template:
+    /*html*/
+    `
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
